@@ -12,8 +12,8 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 COPY . .
 
-#RUN apt-get update
-#RUN apt-get -y install nodejs
+RUN apt-get update
+RUN apt-get -y install nodejs
 
 COPY package.json . 
 RUN npm install
