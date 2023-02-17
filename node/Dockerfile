@@ -15,9 +15,10 @@ COPY . .
 RUN apt-get update
 RUN apt-get -y install nodejs
 
-COPY package.json . 
-RUN npm install
+COPY package.json /tmp/package.json
+RUN cd /tmp && npm install
 
+RUN cd /usr/src/app
 
 #CMD [ "node", "index.js" ]
 
